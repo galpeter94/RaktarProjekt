@@ -1,11 +1,14 @@
 package raktar;
 
+import raktar.controller.ExpiredException;
+import raktar.model.Elelmiszer;
 import raktar.model.Konzerv;
 import raktar.model.Raktar;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.Iterator;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,10 +19,13 @@ public class Main {
 
 
         Raktar raktar = new Raktar();
-    raktar.add(new Konzerv("Tej", "Zalatej", LocalDate.of(2026, 12, 12)));
-    raktar.add(new Konzerv("Pacalpörkölt", "PacaLaci Kft.", LocalDate.of(2030, 1, 1)));
-
-
+    try {
+        raktar.add(new Konzerv("Tej", "Zalatej", LocalDate.of(2026, 12, 12)));
+        raktar.add(new Konzerv("Pacalpörkölt", "PacaLaci Kft.", LocalDate.of(2030, 1, 1)));
+        raktar.add(new Konzerv("hús", "Zsgmondhús", LocalDate.of(2027, 12, 3)));
+    } catch (ExpiredException e){
+        System.out.println(e.getMessage());
+    }
 
     String fileName = "raktar.bin";
 
@@ -37,6 +43,5 @@ public class Main {
         }
 
     }
-
 
 }

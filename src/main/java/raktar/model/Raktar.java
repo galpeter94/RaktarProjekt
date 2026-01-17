@@ -1,8 +1,5 @@
 package raktar.model;
 
-import raktar.controller.ManufComparator;
-import raktar.controller.NameComparator;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -31,4 +28,19 @@ public class Raktar implements Iterable<Elelmiszer>, Serializable {
 
 
 
+}
+
+class ManufComparator implements Comparator<Elelmiszer> {
+
+    @Override
+    public int compare(Elelmiszer e1, Elelmiszer e2) {
+        return e1.getManufacturer().compareToIgnoreCase(e2.getManufacturer());
+    }
+}
+
+class NameComparator implements Comparator<Elelmiszer> {
+    @Override
+    public int compare(Elelmiszer e1, Elelmiszer e2) {
+        return e1.getName().compareToIgnoreCase(e2.getName());
+    }
 }

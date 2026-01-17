@@ -12,7 +12,7 @@ public abstract class Elelmiszer implements Serializable {
     LocalDate expiry;
     private static final long serialVersionUID = 1L;
 
-    public Elelmiszer(String name, String manufacturer, LocalDate expiry){
+    public Elelmiszer(String name, String manufacturer, LocalDate expiry) throws ExpiredException{
         this.name=name;
         this.manufacturer=manufacturer;
         if (expiry==null){
