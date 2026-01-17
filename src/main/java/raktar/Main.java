@@ -1,11 +1,11 @@
 package raktar;
 
-import raktar.model.Elelmiszer;
 import raktar.model.Konzerv;
 import raktar.model.Raktar;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.Collections;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -13,9 +13,13 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-    Raktar raktar = new Raktar();
+
+
+        Raktar raktar = new Raktar();
     raktar.add(new Konzerv("Tej", "Zalatej", LocalDate.of(2026, 12, 12)));
     raktar.add(new Konzerv("Pacalpörkölt", "PacaLaci Kft.", LocalDate.of(2030, 1, 1)));
+
+
 
     String fileName = "raktar.bin";
 
@@ -33,4 +37,6 @@ public class Main {
         }
 
     }
+
+
 }

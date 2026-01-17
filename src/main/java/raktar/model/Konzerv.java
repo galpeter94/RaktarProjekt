@@ -16,10 +16,4 @@ public class Konzerv extends Elelmiszer{
     public boolean receptMutat(){
         return this.recipe != null;
     }
-
-
-    @Override
-    public int compareTo(Elelmiszer o) {
-        return 0;
-    }
 }

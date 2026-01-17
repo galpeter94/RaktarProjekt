@@ -1,9 +1,10 @@
 package raktar.model;
 
+import raktar.controller.ManufComparator;
+import raktar.controller.NameComparator;
+
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Raktar implements Iterable<Elelmiszer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -14,8 +15,20 @@ public class Raktar implements Iterable<Elelmiszer>, Serializable {
         elelmiszerek.add(e);
     }
 
+    public void byName(){
+        Collections.sort(elelmiszerek, new NameComparator());
+    }
+
+    public void byManuf(){
+        Collections.sort(elelmiszerek, new ManufComparator());
+    }
+
+
     @Override
     public Iterator<Elelmiszer> iterator() {
         return elelmiszerek.iterator();
     }
+
+
+
 }

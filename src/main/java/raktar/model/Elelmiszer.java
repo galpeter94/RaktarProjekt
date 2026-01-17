@@ -4,9 +4,8 @@ import raktar.controller.ExpiredException;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-public abstract class Elelmiszer implements Comparable<Elelmiszer>, Serializable {
+public abstract class Elelmiszer implements Serializable {
 
     String name;
     String manufacturer;
@@ -25,12 +24,16 @@ public abstract class Elelmiszer implements Comparable<Elelmiszer>, Serializable
         }
     }
 
-    public int compareToName(Elelmiszer other) {
-        return this.name.compareTo(other.name);
+    public String getName() {
+        return name;
+
     }
 
-    public int compareToManuf(Elelmiszer other){
-        return this.manufacturer.compareTo(other.manufacturer);
+    public String getManufacturer() {
+        return manufacturer;
+
     }
+
 
 }
+
