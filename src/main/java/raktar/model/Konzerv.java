@@ -1,5 +1,6 @@
 package raktar.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Konzerv extends Elelmiszer{
@@ -8,7 +9,7 @@ public class Konzerv extends Elelmiszer{
     String recipe;
 
 
-    public Konzerv(String name, String manufacturer, LocalDateTime expiry) {
+    public Konzerv(String name, String manufacturer, LocalDate expiry) {
         super(name, manufacturer, expiry);
     }
 
